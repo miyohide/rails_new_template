@@ -30,4 +30,6 @@ def remove_gem(name)
 end
 
 remove_comments("Gemfile")
-remove_gem("coffee-rails")
+%w(coffee-rails jbuilder web-console turbolinks).each do |gem|
+  remove_gem(gem)
+end
