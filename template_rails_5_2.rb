@@ -29,6 +29,7 @@ def remove_gem(name)
   end
 end
 
+# 空白行を削除する
 def remove_empty_lines(path)
   filter_lines(path) do |l|
     l.strip.size == 0
