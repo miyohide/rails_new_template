@@ -22,4 +22,12 @@ def remove_comments(path)
   end
 end
 
+# GemをGemfileから取り除く
+def remove_gem(name)
+  filter_lines("Gemfile") do |l|
+    l.include?(name)
+  end
+end
+
 remove_comments("Gemfile")
+remove_gem("coffee-rails")
