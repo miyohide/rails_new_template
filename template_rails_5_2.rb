@@ -29,7 +29,15 @@ def remove_gem(name)
   end
 end
 
+def remove_empty_lines(path)
+  filter_lines(path) do |l|
+    l.strip.size == 0
+  end
+end
+
 remove_comments("Gemfile")
 %w(coffee-rails jbuilder web-console turbolinks).each do |gem|
   remove_gem(gem)
 end
+
+remove_empty_lines("Gemfile")
