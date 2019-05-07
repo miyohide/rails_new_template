@@ -30,6 +30,7 @@ def remove_gem(name)
 end
 
 # 空白行を削除する
+# TODO 空行を詰めすぎているので、複数行の空行は詰めることにしたい
 def remove_empty_lines(path)
   filter_lines(path) do |l|
     l.strip.size == 0
