@@ -42,4 +42,19 @@ remove_comments("Gemfile")
   remove_gem(gem)
 end
 
+gem_group :development do
+  gem "brakeman"
+  gem "bullet"
+  gem "license_finder"
+  gem "bundler-audit"
+end
+
+gem_group :development, :test do
+  gem "pry-rails"
+  gem "rubocop", require: false
+  gem "rspec-rails"
+  run "bundle install"
+  generate("rspec:install")
+end
+
 remove_empty_lines("Gemfile")
