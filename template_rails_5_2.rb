@@ -53,8 +53,9 @@ gem_group :development, :test do
   gem "pry-rails"
   gem "rubocop", require: false
   gem "rspec-rails"
-  run "bundle install"
-  generate("rspec:install")
 end
 
-remove_empty_lines("Gemfile")
+run "bundle install"
+generate("rspec:install")
+
+#remove_empty_lines("Gemfile")
