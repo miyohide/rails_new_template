@@ -32,9 +32,9 @@ end
 # 空白行を削除する
 # TODO 空行を詰めすぎているので、複数行の空行は詰めることにしたい
 def remove_empty_lines(path)
-  filter_lines(path) do |l|
-    l.strip.size == 0
-  end
+  content = File.read(path)
+  content.gsub!(/\n\n\n/, "\n")
+  File.write(path, content)
 end
 
 remove_comments("Gemfile")
@@ -58,4 +58,4 @@ end
 run "bundle install"
 generate("rspec:install")
 
-#remove_empty_lines("Gemfile")
+remove_empty_lines("Gemfile")
