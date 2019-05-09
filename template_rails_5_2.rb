@@ -30,7 +30,6 @@ def remove_gem(name)
 end
 
 # 空白行を削除する
-# TODO 空行を詰めすぎているので、複数行の空行は詰めることにしたい
 def remove_empty_lines(path)
   content = File.read(path)
   content.gsub!(/\n\n\n/, "\n")
