@@ -31,8 +31,8 @@ end
 
 # 空白行を削除する
 def remove_empty_lines(path)
-  content = File.read(path)
-  content.gsub!(/\n\n\n/, "\n")
+  # パラグラフモードで読み込む
+  content = IO.readlines(path, "").join
   File.write(path, content)
 end
 
