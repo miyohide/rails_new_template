@@ -54,6 +54,10 @@ gem_group :development, :test do
   gem "rspec-rails"
 end
 
+gem_group :test do
+  gem 'simplecov', require: false
+end
+
 run "bundle install"
 generate("rspec:install")
 
