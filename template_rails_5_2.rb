@@ -41,6 +41,8 @@ remove_comments("Gemfile")
   remove_gem(gem)
 end
 
+geem "lograge"
+
 gem_group :development do
   gem "brakeman"
   gem "bullet"
