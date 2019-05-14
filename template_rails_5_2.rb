@@ -63,4 +63,10 @@ end
 run "bundle install"
 generate("rspec:install")
 
+initializer 'lograge.rb', <<-CODE
+  Rails.application.configure do
+    config.lograge.enabled = true
+  end
+CODE
+
 remove_empty_lines("Gemfile")
